@@ -119,9 +119,9 @@ namespace FileSave {
             return false;
         }
 
-        // Try alternative pattern G
+        // Try alternative pattern G (wildcard call offset for cross-platform compatibility)
         BytePattern::temp_instance().find_pattern(
-            "48 8D 4C 24 50 E8 1A E6 17 FF 48 8D 54 24 50 48 8D 4D 80");
+            "48 8D 4C 24 50 E8 ? ? ? ? 48 8D 54 24 50 48 8D 4D 80");
         if (BytePattern::temp_instance().has_size(1, "continue tooltip on start screen")) {
             uintptr_t address = BytePattern::temp_instance().get_first().address(0xa);
 
