@@ -23,8 +23,8 @@ namespace Version {
                 BytePattern::temp_instance().get_first().address(0x7), true);
 
             int ver = minor.calVer();
-            // Accept v1.37.x (370-375)
-            if (ver >= 370 && ver <= 375) {
+            // Accept v1.37.x and above (370+)
+            if (ver >= 370) {
                 BytePattern::LoggingInfo("v1_37_0_0");
                 return true;
             }
